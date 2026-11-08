@@ -3,7 +3,7 @@
 {
   home.username = "hogintosh";
   home.homeDirectory = "/home/hogintosh";
-  home.stateVersion = "24.11";
+  home.stateVersion = "26.05";
 
   # --- Базовые пакеты ---
   home.packages = with pkgs; [
@@ -31,14 +31,14 @@
     # Темы / иконки / шрифты
     papirus-icon-theme
     adwaita-icon-theme
-    gnome.adwaita-icon-theme
+    adwaita-icon-theme
 
     # Шрифты
     jetbrains-mono
     inter
     noto-fonts
-    noto-fonts-cjk
-    noto-fonts-emoji
+    noto-fonts-cjk-sans
+    noto-fonts-color-emoji
     font-awesome
 
     # Разработка
@@ -85,8 +85,12 @@
   # --- Git (базовый) ---
   programs.git = {
     enable = true;
-    userName = "hogintosh";       # поменяй
-    userEmail = "you@example.com"; # поменяй
+    settings = {
+	user = {
+	name = "hogintosh";
+	email = "artsavyt@gmail.com";
+};
+};
   };
 
   # --- Bash (автозапуск Sway) ---
@@ -125,13 +129,14 @@
   # --- Qt ---
   qt = {
     enable = true;
-    platformTheme = "gtk";
+    platformTheme.name = "gtk";
     style.name = "adwaita-dark";
   };
 
   # --- Sway ---
   wayland.windowManager.sway = {
     enable = true;
+	checkConfig = false;
     package = pkgs.swayfx;        # можно заменить на pkgs.sway, если хочешь совсем ванильный
     wrapperFeatures.gtk = true;
 

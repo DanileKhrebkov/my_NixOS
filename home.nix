@@ -254,6 +254,7 @@
           xkb_layout = "us,ru";
           xkb_options = "grp:alt_shift_toggle";
         };
+	"type:touchpad" = {tap = "enabled"; natural_scroll = "enabled"; dwt = "enabled";}
       };
 
       bars = [{ command = "waybar"; }];

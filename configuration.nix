@@ -97,5 +97,5 @@
     options = "--delete-older-than 14d";
   };
 
-  system.stateVersion = "24.11";   # поставь актуальный при установке
+  system.stateVersion = "26.05";   # поставь актуальный при установке
 }
